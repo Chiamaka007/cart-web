@@ -1,36 +1,28 @@
 .container {
   padding: 0 2rem;
+  padding: 4rem 20rem;
 }
+
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+ 
+  
+  
+  
+}
+.wrapper {
+  margin-bottom: 2rem;
+  border: 1px solid #9C9C9C;
+  border-radius: 20px;
+  padding: 2rem 3rem;
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
 
 .title a {
   color: #0070f3;
   text-decoration: none;
+ 
 }
 
 .title a:hover,
@@ -42,12 +34,13 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2rem;
+  padding-bottom: 3rem;
 }
 
 .title,
 .description {
-  text-align: center;
+  
 }
 
 .description {
@@ -121,7 +114,7 @@
     border-color: #222;
   }
   .code {
-    background: #111;
+    background: #fff;
   }
   .logo img {
     filter: invert(1);
