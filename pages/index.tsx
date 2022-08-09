@@ -27,7 +27,7 @@ const Home: NextPage = () => {
       <h3 className={styles.title}>Shopping Cart (3)</h3>
       <main className={styles.main}>
         {cart.map((item) => (
-          <div className={`${styles.wrapper} flex gap-10  mb-10`} key={item.id}>
+          <div className={`${styles.wrapper} lg:flex gap-10 mb-10 `} key={item.id}>
             <div className="w-1/3 cart-img_container">
               <Image
                 src={item.image}
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="w-2/3">
-              <div className="lg-flex justify-between">
+              <div className="flex justify-between">
                 <div>
                   <h3 className="font-bold text-green-900">{item.title}</h3>
                 </div>
@@ -46,7 +46,7 @@ const Home: NextPage = () => {
                   <p>{item.weight} kg</p>
                 </div>
               </div>
-              <div className="flex gap-10 mt-5 ">
+              <div className="flex gap-6 mt-5 ">
                 <div>
                   <p>Status</p>
                 </div>
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
                   <h3 className="font-bold text-green-900">In stock(6 left)</h3>
                 </div>
               </div>
-              <div className="flex gap-8">
+              <div className="flex gap-6">
                 <div>
                   <p>Vendor</p>
                 </div>
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
               </span>
               <span> Add to wishlist</span>
 
-              <div className="flex gap-8 mt-5">
+              <div className="flex gap-4 mt-5">
                 <div>
                   <p>Shipper</p>
                 </div>
@@ -89,7 +89,7 @@ const Home: NextPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-8 mt-5">
+              <div className="flex gap-6 mt-5">
                 <div>
                   <p>Shipping fee</p>
                 </div>
