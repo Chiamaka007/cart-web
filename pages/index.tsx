@@ -38,7 +38,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="w-2/3">
-              <div className="flex justify-between">
+              <div className="lg-flex justify-between">
                 <div>
                   <h3 className="font-bold text-green-900">{item.title}</h3>
                 </div>
