@@ -4,9 +4,7 @@
 }
 
 
-.main {
- 
-}
+
 .title {
   font-size: 26px;
   font-weight: bold;
@@ -63,7 +61,7 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 475px) {
+@media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
@@ -73,7 +71,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (max-width: 800px) {
   .grid {
     width: 100%;
     flex-direction: column;
