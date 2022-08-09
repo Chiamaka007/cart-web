@@ -6,15 +6,15 @@ import styles from "../styles/Home.module.css";
 import { cartData } from "../constants";
 
 const Home: NextPage = () => {
-  const [cart, setCart] = useState(cartData)
+  const [cart, setCart] = useState(cartData);
 
-  const handleRemove = () => {
-    setCart(
-      current => current.filter(cart => {
-        return cart.id !== 1;
+  const handleRemove = (id: number) => {
+    setCart((current) =>
+      current.filter((cart) => {
+        return cart.id !== id;
       })
-    )
-  }
+    );
+  };
 
   return (
     <div className={styles.container}>
@@ -25,85 +25,94 @@ const Home: NextPage = () => {
       </Head>
 
       <h3 className={styles.title}>Shopping Cart (3)</h3>
-      <main className={styles.main} >
+      <main className={styles.main}>
         {cart.map((item) => (
-              <div className={`${styles.wrapper} flex gap-10  mb-10`}key={item.id}>
-              <div className="w-1/3 items-center">
-                <Image src={item.image} width={200} height={150} />
-              </div>
-              <div className="w-2/3">
-                <div className="flex justify-between">
-                  <div>
-                    <h3 className="font-bold">{item.title}</h3>
-                  </div>
-                  <div>
-                    <p>{item.weight} kg</p>
-                  </div>
-                </div>
-                <div className="flex gap-10 mt-5 ">
-                  <div>
-                    <p>Status</p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold">In stock(6 left)</h3>
-                  </div>
-                </div>
-                <div className="flex gap-8">
-                  <div>
-                    <p>Vendor</p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Garcia food</h3>
-                  </div>
-                </div>
-                <Image src={"/images/star.jpg"} width={100} height={30}/>
-                <div className="flex justify-between">
+          <div className={`${styles.wrapper} flex gap-10  mb-10`} key={item.id}>
+            <div className="w-1/3 cart-img_container">
+              <Image
+                src={item.image}
+                width={200}
+                height={150}
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className="w-2/3">
+              <div className="flex justify-between">
                 <div>
-                <p className="font-bold mb-5">${item.price}</p>
+                  <h3 className="font-bold text-green-900">{item.title}</h3>
                 </div>
-                <button onClick={handleRemove}>
+                <div>
+                  <p>{item.weight} kg</p>
+                </div>
+              </div>
+              <div className="flex gap-10 mt-5 ">
+                <div>
+                  <p>Status</p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-green-900">In stock(6 left)</h3>
+                </div>
+              </div>
+              <div className="flex gap-8">
+                <div>
+                  <p>Vendor</p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-green-900">Garcia food</h3>
+                </div>
+              </div>
+              <Image src={"/images/star.jpg"} width={100} height={30} />
+              <div className="flex justify-between">
+                <div>
+                  <p className="font-bold mb-5 text-green-900">${item.price}</p>
+                </div>
+                <button
+                  onClick={() => handleRemove(item.id)}
+                  className={styles.delete}
+                >
                   X
                 </button>
-                </div>
-                <span >
-                <Image src={"/images/heart.jpg"} width={30} height={30}  /> 
-                </span>
-               <span>  Add to wishlist</span>
-    
-                  <div className="flex gap-8 mt-5">
-                  <div>
-                    <p>Shipper</p>
-                  </div>
-                  <div>
-                    <p className="font-bold">Standard Shipping(Teddyship)</p>
-                  </div>
-                </div>
-                <div className="flex gap-8 mt-5">
-                  <div>
-                    <p>Shipping fee</p>
-                  </div>
-                  <div>
-                    <p className="font-bold">${item.fee}</p>
-                  </div>
-                </div> 
               </div>
-            </div>
-        
-            ))}
-            <hr />
-            <div className="flex justify-between">
-              <div>
-              <h1 className="text-2xl font-bold">Subtotal</h1>
-              <p>excl shipping</p>
-              </div>
-             
+              <span>
+                <Image src={"/images/heart.jpg"} width={30} height={30} />
+              </span>
+              <span> Add to wishlist</span>
 
-              <p className="text-2xl font-bold">$78.31</p>
+              <div className="flex gap-8 mt-5">
+                <div>
+                  <p>Shipper</p>
+                </div>
+                <div>
+                  <p className="font-bold text-green-900">
+                    Standard Shipping(Teddyship)
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-8 mt-5">
+                <div>
+                  <p>Shipping fee</p>
+                </div>
+                <div>
+                  <p className="font-bold text-green-900">${item.fee}</p>
+                </div>
+              </div>
             </div>
-            <div className="flex justify-around mt-10">
-              <button>Continue Shopping</button>
-              <button>Checkout</button>
-            </div>
+          </div>
+        ))}
+        <hr />
+        <div className="flex justify-between mt-10">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-700">Subtotal</h1>
+            <p>excl shipping</p>
+          </div>
+
+          <p className="text-2xl font-bold text-gray-700">$78.31</p>
+        </div>
+        <div className="flex justify-around mt-10">
+          <button className={styles.button1}>Continue Shopping</button>
+          <button className={styles.button2}>Checkout</button>
+        </div>
       </main>
     </div>
   );
